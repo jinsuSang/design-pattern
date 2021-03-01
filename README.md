@@ -2,4 +2,4 @@
 
 도서 Head First Design Patterns
 
-## 1. [Startegy Pattern]()
+## 1. [Startegy Pattern](https://github.com/jinsuSang/design-pattern/tree/main/01-strategy)
