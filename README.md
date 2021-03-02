@@ -4,3 +4,4 @@
 언어: Golang
 
 ## 1. [Startegy Pattern](https://github.com/jinsuSang/design-pattern/tree/main/01-strategy)
+## 2. [Observer Pattern](https://github.com/jinsuSang/design-pattern/tree/main/02-observer)
