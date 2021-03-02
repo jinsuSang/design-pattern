@@ -1,4 +1,4 @@
-package weatherDevice
+package weatherdevice
 
 type WeatherData struct {
 	observers   []Observer
@@ -7,7 +7,7 @@ type WeatherData struct {
 	pressure    float64
 }
 
-func newWeatherData() *WeatherData {
+func NewWeatherData() *WeatherData {
 	wd := WeatherData{observers: []Observer{}}
 	return &wd
 }
@@ -21,9 +21,10 @@ func (wd *WeatherData) RemoveObserver(o Observer) {
 	for i, v := range wd.observers {
 		if o == v {
 			index = i
+			break
 		}
 	}
-	if index > 0 {
+	if index >= 0 {
 		wd.observers = append(wd.observers[:index], wd.observers[index+1:]...)
 	}
 }

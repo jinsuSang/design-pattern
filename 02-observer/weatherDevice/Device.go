@@ -1,8 +1,6 @@
-package weatherDevice
+package weatherdevice
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type CurrentConditionsDisplay struct {
 	temperature float64

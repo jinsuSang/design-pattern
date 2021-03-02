@@ -1,4 +1,4 @@
-package weatherDevice
+package weatherdevice
 
 type Subject interface {
 	RegisterObserver(o Observer)
