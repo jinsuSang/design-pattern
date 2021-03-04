@@ -17,7 +17,7 @@ func (m *Mocha) GetDescription() string {
 }
 
 func (m *Mocha) Cost() float64 {
-	return .20 + m.CondimentDecorator.cost
+	return .20 + m.CondimentDecorator.Cost()
 }
 
 type Soy struct {
@@ -25,11 +25,11 @@ type Soy struct {
 }
 
 func (s *Soy) GetDescription() string {
-	return s.Beverage.GetDescription() + ", 두유"
+	return s.CondimentDecorator.GetDescription() + ", 두유"
 }
 
 func (s *Soy) Cost() float64 {
-	return .20 + s.Beverage.cost
+	return .20 + s.CondimentDecorator.Cost()
 }
 
 type Whip struct {
@@ -41,7 +41,7 @@ func (w *Whip) GetDescription() string {
 }
 
 func (w *Whip) Cost() float64 {
-	return .20 + w.Beverage.cost
+	return .20 + w.CondimentDecorator.Cost()
 }
 
 type SteamMilk struct {
