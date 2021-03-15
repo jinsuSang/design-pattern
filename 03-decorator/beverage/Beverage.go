@@ -5,49 +5,43 @@ type Beverage struct {
 	cost        float64
 }
 
-func (b Beverage) GetDescription() string {
-	return b.description
-}
-
-func (b Beverage) Cost() float64 {
-	return b.cost
-}
-
-func NewBeverage() *Beverage {
-	nb := &Beverage{description: "제목 없음"}
-	return nb
+type IBeverage interface {
+	Cost() float64
+	Description() string
 }
 
 type Espresso struct {
-	Beverage
+	beverage Beverage
 }
 
 func (e Espresso) Cost() float64 {
-	return e.cost
+	return e.beverage.cost
 }
 
-func (e Espresso) GetDescription() string {
-	return e.description
+func (e Espresso) Description() string {
+	return e.beverage.description
 }
 
 func NewEspresso() *Espresso {
-	espresso := &Espresso{Beverage: Beverage{description: "에스프레소", cost: 1.99}}
-	return espresso
+	return &Espresso{
+		beverage: Beverage{cost: 1.99, description: "에스프레소"},
+	}
 }
 
 type HouseBlend struct {
-	Beverage
+	beverage Beverage
 }
 
 func (hb HouseBlend) Cost() float64 {
-	return hb.cost
+	return hb.beverage.cost
 }
 
-func (hb HouseBlend) GetDescription() string {
-	return hb.description
+func (hb HouseBlend) Description() string {
+	return hb.beverage.description
 }
 
 func NewHouseBlend() *HouseBlend {
-	houseBlend := &HouseBlend{Beverage: Beverage{description: "하우스 블렌드 커피", cost: 8.9}}
-	return houseBlend
+	return &HouseBlend{
+		beverage: Beverage{cost: 8.9, description: "하우스 블렌드"},
+	}
 }

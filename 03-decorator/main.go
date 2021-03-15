@@ -9,18 +9,19 @@ import (
 func main() {
 	espresso := beverage.NewEspresso()
 
-	fmt.Println(espresso.GetDescription() + " $" + fmt.Sprint(espresso.Cost()))
+	fmt.Println(espresso.Description(), espresso.Cost())
 
-	hb := beverage.NewHouseBlend()
-	mocha := beverage.Mocha{CondimentDecorator: beverage.CondimentDecorator(*hb)}
-	fmt.Println(mocha)
-	mocha = beverage.Mocha{CondimentDecorator: mocha.CondimentDecorator}
-	fmt.Println(mocha)
-	fmt.Println(mocha.GetDescription() + " $" + fmt.Sprint(mocha.Cost()))
+	mocha := beverage.NewMocha(espresso)
+	fmt.Println(mocha.Description(), mocha.Cost())
 
-	// 	에스프레소 $1.99
-	// {{{하우스 블렌드 커피 8.9}}}
-	// {{{하우스 블렌드 커피 8.9}}}
-	// 하우스 블렌드 커피, 모카 $9.1
-	// 이유가 뭘까??
+	mocha = beverage.NewMocha(mocha)
+	fmt.Println(mocha.Description(), mocha.Cost())
+
+	soy := beverage.NewSoy(mocha)
+	fmt.Println(soy.Description(), soy.Cost())
+	// Output:
+	// 에스프레소 1.99
+	// 에스프레소, 모카 2.19
+	// 에스프레소, 모카, 모카 2.39
+	// 에스프레소, 모카, 모카, 두유 2.69
 }
