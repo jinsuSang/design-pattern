@@ -10,3 +10,7 @@
 ## 3. [Decorator](https://github.com/jinsuSang/design-pattern/tree/main/03-decorator)
 
 ## 4. [Factory](https://github.com/jinsuSang/design-pattern/tree/main/04-factory)
+
+## 5. [Singleton](https://github.com/jinsuSang/design-pattern/tree/main/05-singleton)
+
+## 6. [Command](https://github.com/jinsuSang/design-pattern/tree/main/06-command)
